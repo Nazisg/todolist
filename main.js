@@ -4,7 +4,6 @@
 
 var data
 
-const addData =  {name: `${$("#addInput").val()}`,}
 
 axios.get("http://localhost:3000/data").then((res)=>{
     data =res.data    
@@ -15,7 +14,7 @@ data.forEach(e => {
     <div class="item">
     <input id="checkbox" type="checkbox">
     <div class="control">
-        <input type="text" value="${e.name}" readonly> 
+        <input type="text" value="${e.name}"  id="editInput"> 
         <p id="delete">SİL</p>
         <p id="edit">DƏYİŞ</p>
     </div>
@@ -29,16 +28,22 @@ data.forEach(e => {
 //     })
 //   })
     $("#edit").click(()=>{
-        axios.put("http://localhost:3000/data",addData).then((res)=>{   
+        const editData =  {name: `${$("#editInput").val()}`,}
+        axios.put(`http://localhost:3000/data/${e.id}`,editData).then((res)=>{   
+            console.log(res)
         })
     })
-    
+    var id = e.id
 });
+$('.item').click(()=>{
+    console.log(id)
+})
 })
 
 
 
 $("#add").click(()=>{
+    const addData =  {name: `${$("#addInput").val()}`,}
     axios.post("http://localhost:3000/data",addData).then((res)=>{   
     })
 })
