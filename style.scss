@@ -1,0 +1,107 @@
+@font-face {
+    font-family: inter;
+    src: url(./fonts/Inter-Regular.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inter;
+}
+body{
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+    // height: 100vh;  
+    
+    .todolist{
+        width: 80%;
+        margin: 50px auto;
+        // border: 1px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 60px;
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            letter-spacing: 1px;
+        }
+        .head{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            p{
+                background: var(----linear-gradient, linear-gradient(90deg, #EC4899 0%, #8B5CF6 100%, rgba(255, 255, 255, 0.00) 100%));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+                font-size: 17px;
+                cursor: pointer;
+            
+            }
+            input{
+                width: 50%;
+                border-radius: 20px;
+                background-color: #1F2937;
+                border: 1px solid #fff;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 700;
+                padding: 10px 20px;
+                outline: none;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+}
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 82%;
+
+            .item{
+                display: flex;
+                gap: 10px;
+                #checkbox{
+                    width: 30px;
+                }
+                .control{
+                    width: 100%;
+                    border-radius: 10px;
+                    display: flex;
+                    gap: 15px;
+                    background-color: #111827;
+                    padding: 10px 20px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    input{
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        color: white;
+                        font-weight: 700;
+                        font-size: 18px;
+                    }
+                    p{
+                        color: #DC143C;
+                        font-weight: 700;
+                        font-size: 17px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

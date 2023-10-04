@@ -1,0 +1,103 @@
+@font-face {
+  font-family: inter;
+  src: url(./fonts/Inter-Regular.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inter;
+}
+
+body {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+}
+body .todolist {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+}
+body .todolist .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  letter-spacing: 1px;
+}
+body .todolist .head {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+body .todolist .head p {
+  background: var(----linear-gradient, linear-gradient(90deg, #EC4899 0%, #8B5CF6 100%, rgba(255, 255, 255, 0) 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+}
+body .todolist .head input {
+  width: 50%;
+  border-radius: 20px;
+  background-color: #1F2937;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+body .todolist .list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 82%;
+}
+body .todolist .list .item {
+  display: flex;
+  gap: 10px;
+}
+body .todolist .list .item #checkbox {
+  width: 30px;
+}
+body .todolist .list .item .control {
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+  background-color: #111827;
+  padding: 10px 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+body .todolist .list .item .control input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+body .todolist .list .item .control p {
+  color: #DC143C;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
