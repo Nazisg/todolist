@@ -2,49 +2,41 @@
 
 // npx json-server --watch db.json --port 3000
 
-var data
 
-
-axios.get("http://localhost:3000/data").then((res)=>{
-    data =res.data    
-
-data.forEach(e => {
-    console.log(e.name)
+    axios.get("http://localhost:3000/data").then((res)=>{
+    res.data.forEach(e => {
     var itemHTML  = `
     <div class="item">
     <input id="checkbox" type="checkbox">
     <div class="control">
-        <input type="text" value="${e.name}"  id="editInput"> 
-        <p id="delete">SİL</p>
-        <p id="edit">DƏYİŞ</p>
+        <input type="text" id="input${e.id}" value="${e.name}"  class="editInput"> 
+        <p id="delete${e.id}">SİL</p>
+        <p id="edit${e.id}">DƏYİŞ</p>
     </div>
     </div>
     `
     $(".list").append(itemHTML)
-
-//     $("#delete").click(()=>{
-//         axios.delete(`http://localhost:3000/data/${e.id}`).then((res)=>{
-//             console.log(res)
-//     })
-//   })
-    $("#edit").click(()=>{
-        const editData =  {name: `${$("#editInput").val()}`,}
-        axios.put(`http://localhost:3000/data/${e.id}`,editData).then((res)=>{   
-            console.log(res)
-        })
-    })
-    var id = e.id
+    $(`#delete${e.id}`).click(()=> deleteTask(e.id))
+    $(`#edit${e.id}`).click(()=>editTask(e.id))
 });
-$('.item').click(()=>{
-    console.log(id)
 })
-})
-
-
 
 $("#add").click(()=>{
     const addData =  {name: `${$("#addInput").val()}`,}
     axios.post("http://localhost:3000/data",addData).then((res)=>{   
     })
 })
+
+function editTask(id){
+    const newName = $(`#input${id}`).val();
+    const editData = { name: newName };
+    axios.put(`http://localhost:3000/data/${id}`,editData).then((res)=>{   
+    })
+}
+
+function deleteTask(id){
+    axios.delete(`http://localhost:3000/data/${id}`).then((res)=>{
+    })
+}
+
 
