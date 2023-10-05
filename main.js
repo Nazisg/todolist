@@ -7,7 +7,7 @@
     res.data.forEach(e => {
     var itemHTML  = `
     <div class="item">
-    <input id="checkbox" type="checkbox">
+    <input class="checkbox" type="checkbox" id="${e.id}">
     <div class="control">
         <input type="text" id="input${e.id}" value="${e.name}"  class="editInput"> 
         <p id="delete${e.id}">SİL</p>
@@ -18,6 +18,20 @@
     $(".list").append(itemHTML)
     $(`#delete${e.id}`).click(()=> deleteTask(e.id))
     $(`#edit${e.id}`).click(()=>editTask(e.id))
+
+    $("#all").click(()=>{
+        $(".checkbox").prop("checked", true);
+    })
+
+    $("#delSelected").click(()=>{
+        var checkedCheckboxes = $(".checkbox:checked");
+        checkedCheckboxes.each(function() {
+          var id = $(this).attr("id");
+          console.log(id)
+          deleteTask(id);
+      });
+    })
+
 });
 })
 
@@ -38,5 +52,3 @@ function deleteTask(id){
     axios.delete(`http://localhost:3000/data/${id}`).then((res)=>{
     })
 }
-
-

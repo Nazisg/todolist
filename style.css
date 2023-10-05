@@ -71,7 +71,7 @@ body .todolist .list .item {
   display: flex;
   gap: 10px;
 }
-body .todolist .list .item #checkbox {
+body .todolist .list .item .checkbox {
   width: 30px;
 }
 body .todolist .list .item .control {
